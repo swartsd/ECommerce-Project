@@ -47,7 +47,11 @@ mongoose.connect('mongodb+srv://new-user_Dallin-Swarts:p9lB95Q7T1krxbr7@cluster-
       }
     });
 
-    app.listen(3000);
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log(`Our app is running on port ${PORT}`);
+    });
+
   }).
   catch(err => {
     console.log(err);
